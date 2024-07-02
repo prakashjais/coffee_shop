@@ -1,0 +1,21 @@
+.contect{
+    margin: 6%;
+    padding: 32;
+    /*border: solid; */
+    background-color: #dabebe;
+    opacity: 0.6;
+    text-align: center;
+    margin-bottom: 13%;
+    margin-top: 10%;
+    border-radius: 7%;
+}
+form{
+    border: 1px solid;
+    margin: 25px;
+    padding: 30px;
+    font-size: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 64px 96px 128px 32px;
+    background-color: rgb(165, 126, 81);
+}

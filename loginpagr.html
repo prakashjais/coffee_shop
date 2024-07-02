@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/main.css">
+    <!-- <link rel="stylesheet" href="css/card.css"> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+
+        }
+        h2{
+            color: #fff;
+            
+        }
+        body{
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: rgb(32, 30, 30);
+        }
+        .box{
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            width: 380px;
+            height: 420px;
+            background: #2f2121;
+            overflow: hidden;
+            margin-left: 550px;
+            margin-top: 150px;
+            margin-bottom: 150px;
+        }
+        .box::before{
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 380px;
+            height: 420px;
+            background: linear-gradient(0deg,transparent
+            ,transparent,#45f3ff,#45f3ff,#45f3ff);
+            z-index: 1;
+            transform-origin: bottom right;
+            animation: animate 6s linear infinite;
+
+        }
+        
+        .box::after{
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 380px;
+            height: 420px;
+            background: linear-gradient(0deg,transparent
+            ,transparent,#45f3ff,#45f3ff,#45f3ff);
+            z-index: 1;
+            transform-origin: bottom right;
+            animation: animate 6s linear infinite;
+            animation-delay: -3s;
+        }
+
+        .borderline{
+            position: absolute;
+            top: 0;
+            inset: 0;
+        }
+        .borderline::before{
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 380px;
+            height: 420px;
+            background: linear-gradient(0deg,transparent
+            ,transparent,#ff2770,#ff2770,#ff2770);
+            z-index: 1;
+            transform-origin: bottom right;
+            animation: animate 6s linear infinite;
+            animation-delay: -1.5s;
+        }
+        .borderline::after{
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 380px;
+            height: 420px;
+            background: linear-gradient(0deg,transparent
+            ,transparent,#ff2770,#ff2770,#ff2770);
+            z-index: 1;
+            transform-origin: bottom right;
+            animation: animate 6s linear infinite;
+            animation-delay: -1.5s;
+            animation-delay: -4.5s;
+        }
+        @keyframes animate
+        {
+            0%
+            {
+                transform: rotate(0deg);
+            }
+            100%
+            {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .box form{
+            position: absolute;
+            inset: 4px;
+            background: #222;
+            padding: 50px 40px;
+            border-radius: 8px;
+            z-index: 2;
+            display: flex;
+
+            flex-direction: column;
+        }
+    
+        
+        .box form h2{
+            color: #fff;
+            font-weight: 500;
+            text-align: center;
+            letter-spacing: 0.1em;
+        }
+        .box form .inputbox{
+            position: relative;
+            width: 300px;
+            margin-top: 35px;
+
+        }
+        .box form .inputbox input{
+            position: relative;
+            width: 100%;
+            padding: 20px 10px 10px;
+            background: transparent;
+            outline: none;
+            border: none;
+            box-shadow: none;
+            color: #2a2e43;
+            font-size: 1em;
+            letter-spacing: 0.05em;
+            transition: 0.5s;
+            z-index: 10;
+        }
+        .box form .inputbox span{
+            position: absolute;
+            left: 0;
+            padding: 20px 0px 10px;
+            pointer-events: none;
+            color: #8f8f8f;
+            font: size 1em; ;
+            letter-spacing: 0.05em;
+            transition: 0.5s;
+
+        }
+        .box form .inputbox input:valid ~ span,
+        .box form .inputbox input:focus ~ span{
+            color: #fff;
+            font-size: 0.75em;
+            transform: translateY(-34px);
+        }
+
+        .box form .inputbox i{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: 0.5s;
+            pointer-events: none;
+        }
+
+        
+        .box form .inputbox input:valid ~ i,
+        .box form .inputbox input:focus ~ i{
+            height: 40px;
+        }
+
+        
+        .box form .links{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            gap:50px;
+
+        }
+        .box form .links a{
+            margin: 10px 0;
+            font-size: 0.86em;
+            color: #8f8f8f;
+            margin-left: 30px;
+            margin-right: 20px;
+            padding: 10px;
+            text-decoration: none;
+        }
+        
+        .box form .links a:hover,
+        .box form .links a:nth-child(2)
+        {
+            color: #fff;
+        }
+
+        .box form input[type="submit"]
+        {
+            border: none;
+            outline: none;
+            padding: 9px 25px;
+            background: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: 10px;
+            width: 100px;
+        }
+        .box form input[type="submit"]:active{
+
+        }
+
+
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    
+    <header class="header">
+        <div class="logo">
+            <img src="imagee/logo.avif" alt="" height="80px" width="165px">
+        </div>
+        <div class="header-content container">
+
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li><a href="index.html" class="navbar-links">Home</a></li>
+                    <li><a href="menu.html" class="navbar-links">Menu</a></li>
+                    <li><a href="about.html" class="navbar-links">About us</a></li>
+                    <li><a href="contect.html" class="navbar-links">Contact us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-buttons">
+                <i class="fa-solid fa-magnifying-glass search-btn" title="Search"></i>
+                <a href="loginpagr.html"><i class="fa-solid fa-user" title="Login/Register"></i></a>
+                <i class="fa-solid fa-shop" title="Cart"></i>
+                <a class="social-target" href="#"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </header>
+
+<br><br><br><br>
+    <div class="box">
+        <span class="borderline"></span>
+        <form action="">
+            <h2>Sign in</h2>
+            <div class="inputbox">
+                <input type="text" required="required">
+                <span>Username</span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="password" required="required">
+                <span>Password</span>
+                <i></i>
+            </div>
+            <div class="links">
+                <a class="one" href="#">Forgot Password</a>
+                <a class="two" href="#">SignUp</a>
+            </div>
+            <input type="submit" name="" id="" value="Login">
+        </form>
+    </div>
+    
+
+   <br><br><br><br>
+<!-- Footer Start -->
+     
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h2>Cofee Shope</h2>
+                <ul>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">our sirvice</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                    <li><a href="#">affiliate program</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h2>get help</h2>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">shipping</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="#">order status</a></li>
+                    <li><a href="#">payment option</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h2>online shope</h2>
+                <ul>
+                    <li><a href="#">watch</a></li>
+                    <li><a href="#">bag</a></li>
+                    <li><a href="#">shose</a></li>
+                    <li><a href="#">dress</a></li>
+                    <li><a href="#">blasser</a></li>
+                    <li><a href="#">gogles</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h2>follow us</h2>
+                <div class="social-link">
+                    <a class="social-target" href="https://www.facebook.com/prakash.jaiswar.1297"><i class="fab fa-facebook-f"></i></a>
+                    <a class="social-target" href="https://x.com/i/flow/login?redirect_after_login=%2FPrakashhhh02"><i class="fab fa-twitter"></i></a>
+                    <a class="social-target" href="https://www.instagram.com/prakashhh.02/?igsh=enc1eDR1Nzhsd3Q4"><i class="fab fa-instagram"></i></a>
+                    <a class="social-target" href="https://www.linkedin.com/in/prakash-jaiswar-2ba62b26a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+                <div class="footer-col">
+                    <h2>payment</h2>
+                    <div class="payment">
+                        <img class="pay" src="../Coffeeshop/imagee/gpay1.jpg" alt="" height="40px" style="border: 0 solid; border-radius: 30px;">
+                        <img class="pay" src="../Coffeeshop/imagee/pay.jpg" alt="" height="40px" width="78px" style="border: 0 solid; border-radius: 30px;">
+                        <img class="pay" src="../Coffeeshop/imagee/pay2.jpg" alt="" height="40px" width="78px" style="border: 0 solid; border-radius: 30px;">
+                    </div>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+     </div>
+</footer>
+
+<!-- Footer Start -->
+
+</body>
+</html>
